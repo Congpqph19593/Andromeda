@@ -1,4 +1,4 @@
-package com.nhom2.andromeda;
+package com.nhom2.andromeda.database;
 
 import android.content.ContentValues;
 import android.content.Context;
