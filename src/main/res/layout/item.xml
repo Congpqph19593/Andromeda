@@ -22,7 +22,7 @@
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="movie1"
+        android:text="Movie 1"
         android:textColor="#fff"
         style="@style/TextAppearance.AppCompat.Title"
         android:layout_gravity="bottom"
