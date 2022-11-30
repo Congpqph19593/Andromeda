@@ -1,5 +1,6 @@
 package com.nhom2.andromeda.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -50,7 +51,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull MovieAdapter.ViewHolder holder, int position) {
         final MovieItem movieItem = movieItems.get(position);
         
-        readCursorData();
+        readCursorData(movieItem, holder);
+        holder.imageView.setImageResource(movieItem.getImageResource());
+        holder.titleTextView.setText(movieItem.getTitle());
     }
 
     @Override
@@ -105,9 +108,19 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         SQLiteDatabase db = favDB.getReadableDatabase();
         try {
             while (cursor.moveToNext()) {
-                String item_fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
+                @SuppressLint("Range") String item_fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
                 movieItem.setFavStatus(item_fav_status);
+
+                if (item_fav_status != null && item_fav_status.equals("1")) {
+                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_favorite_red);
+                } else if (item_fav_status != null && item_fav_status.equals("0")) {
+                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_favorite_shadow);
+                }
             }
+        } finally {
+            if (cursor != null && cursor.isClosed())
+                cursor.close();
+            db.close();
         }
     }
 }
