@@ -71,7 +71,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
             imageView = itemView.findViewById(R.id.imageView);
             titleTextView = itemView.findViewById(R.id.titleTextView);
-            favBtn = itemView.findViewById(R.id.favBtn);
+            favBtn = (Button) itemView.findViewById(R.id.favBtn);
 
             favBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
