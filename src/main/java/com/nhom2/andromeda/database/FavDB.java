@@ -17,9 +17,9 @@ public class FavDB extends SQLiteOpenHelper {
     public static String ITEM_TITLE = "itemTitle";
     public static String ITEM_IMAGE = "itemImage";
     public static String FAVORITE_STATUS = "fStatus";
-    private static String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "("
-            + KEY_ID + "TEXT, " + ITEM_TITLE + "TEXT, "
-            + ITEM_IMAGE + "TEXT, " + FAVORITE_STATUS + "TEXT)";
+    private static String CREATE_TABLE = " CREATE TABLE " + TABLE_NAME + "("
+            + KEY_ID + " TEXT, " + ITEM_TITLE + " TEXT, "
+            + ITEM_IMAGE + " TEXT, " + FAVORITE_STATUS + " TEXT)";
     public FavDB(Context context) {
         super(context, DATABASE_NAME, null, DB_VERSION);
     }
@@ -58,13 +58,13 @@ public class FavDB extends SQLiteOpenHelper {
 
     public Cursor read_all_data(String id) {
         db = this.getReadableDatabase();
-        String sql = "select * from " + TABLE_NAME + " where " + KEY_ID + "=" + id + "";
+        String sql = " select * from " + TABLE_NAME + " where " + KEY_ID+" = "+id+"";
         return db.rawQuery(sql, null, null);
     }
 
     public void remove_fav(String id) {
         db = this.getWritableDatabase();
-        String sql = "UPDATE " + TABLE_NAME + "SET " + FAVORITE_STATUS + " = '0' WHERE " + KEY_ID + "=" + id + "";
+        String sql = "UPDATE " + TABLE_NAME + " SET " + FAVORITE_STATUS + " = '0' WHERE " + KEY_ID+" = "+id+ "";
         db.execSQL(sql);
         Log.d("remove", id.toString());
     }
