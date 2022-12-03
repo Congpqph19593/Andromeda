@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1084506263721",
+    "project_id": "andromeda-74556",
+    "storage_bucket": "andromeda-74556.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084506263721:android:84a1e9eab386a687fa19b8",
+        "android_client_info": {
+          "package_name": "com.nhom2.andromeda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084506263721-dsgcf32i6vjrp5kqjjv2147kptfpt2c3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nhom2.andromeda",
+            "certificate_hash": "78362a261690b805dc2518260158ebb58c13c778"
+          }
+        },
+        {
+          "client_id": "1084506263721-lirrmdbbcouk0u1bbg4tdmq784jtprhp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7xpvuf_X9ejsna0EgVabyfp6l4SrRgdQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084506263721-lirrmdbbcouk0u1bbg4tdmq784jtprhp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -8,7 +8,6 @@ public class FirebaseApp extends android.app.Application {
     public void onCreate() {
         super.onCreate();
 
-        //enable offline data on firebase database
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
     }
 }
